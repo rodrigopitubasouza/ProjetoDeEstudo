@@ -1,2 +1,10 @@
-com\estudo\entity\Aluno.class
+com\estudo\service\AlunoService.class
+com\estudo\service\exception\AlunoInexistenteExceptionMapper.class
+com\estudo\service\exception\AlunoExistenteException.class
+com\estudo\interceptor\InterceptorTransactional.class
 com\estudo\repository\AlunoRepositorty.class
+com\estudo\model\AlunoDAO.class
+com\estudo\annotation\Transactional.class
+com\estudo\entity\Aluno.class
+com\estudo\service\exception\AlunoInexistenteException.class
+com\estudo\model\GenericDAO.class

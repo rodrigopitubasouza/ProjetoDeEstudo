@@ -1,4 +1,4 @@
-package com.estudo.util.jpa;
+package com.estudo.annotation;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
