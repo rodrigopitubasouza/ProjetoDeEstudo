@@ -9,7 +9,7 @@ public class AlunoInexistenteExceptionMapper implements ExceptionMapper<AlunoIne
 
 	@Override
 	public Response toResponse(AlunoInexistenteException exception) {
-		return Response.status(Response.Status.BAD_REQUEST)
+		return Response.status(Response.Status.NOT_FOUND)
                 .header("Motivo: ", exception.getMessage())
                 .build();
 	}

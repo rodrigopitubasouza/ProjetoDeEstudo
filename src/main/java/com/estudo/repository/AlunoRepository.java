@@ -41,20 +41,22 @@ public class AlunoRepository {
 	@Consumes("application/json")
 	public Response insertAluno(Aluno aluno) {
 		alunoService.insert(aluno);
-		return Response.status(201).entity("foi").build();
+		return Response.status(201).build();
 	}
 	
 	@PUT
 	@Path("/{id}")
 	@Consumes("application/json")
-	public void updateAluno(@PathParam("id") Integer id,Aluno aluno) throws AlunoInexistenteException {
+	public Response updateAluno(@PathParam("id") Integer id,Aluno aluno) throws AlunoInexistenteException {
 		aluno.setId(id);
 		alunoService.update(aluno);
+		return Response.status(200).build();
 	}
 	
 	@DELETE
 	@Path("/{id}")
-	public void deleteAluno(@PathParam("id") Integer id) throws AlunoInexistenteException {
+	public Response deleteAluno(@PathParam("id") Integer id) throws AlunoInexistenteException {
 		alunoService.remove(id);
+		return Response.status(204).build();
 	}
 }
