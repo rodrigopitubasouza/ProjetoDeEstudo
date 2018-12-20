@@ -1,4 +1,4 @@
-package com.estudo.model;
+package com.estudo.dao;
 
 import java.io.Serializable;
 import java.util.List;
@@ -18,9 +18,6 @@ import com.estudo.interceptor.InterceptorTransactional;
 @RequestScoped
 public class GenericDAO<T> implements Serializable{
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 1289446525582740316L;
 
 	@Inject
@@ -31,7 +28,7 @@ public class GenericDAO<T> implements Serializable{
 	public GenericDAO(Class<T> type) {
 		this.type = type;
 	}
-	
+
 	public T find(Integer id) {
 		return (T) entityManager.find(type,id);
 	}

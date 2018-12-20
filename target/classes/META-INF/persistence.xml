@@ -11,6 +11,7 @@
 
    <!-- entidade mapeada -->
    <class>com.estudo.entity.Aluno</class>
+   <class>com.estudo.entity.Endereco</class>
    
 
    <properties>

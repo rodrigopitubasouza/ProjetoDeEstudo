@@ -5,10 +5,10 @@ import javax.ws.rs.ext.ExceptionMapper;
 import javax.ws.rs.ext.Provider;
 
 @Provider
-public class AlunoInexistenteExceptionMapper implements ExceptionMapper<AlunoInexistenteException> {
+public class InexistenteExceptionMapper implements ExceptionMapper<InexistenteException> {
 
 	@Override
-	public Response toResponse(AlunoInexistenteException exception) {
+	public Response toResponse(InexistenteException exception) {
 		return Response.status(Response.Status.NOT_FOUND)
                 .header("Motivo: ", exception.getMessage())
                 .build();

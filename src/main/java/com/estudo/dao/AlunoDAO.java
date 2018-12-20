@@ -1,4 +1,4 @@
-package com.estudo.model;
+package com.estudo.dao;
 
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Named;

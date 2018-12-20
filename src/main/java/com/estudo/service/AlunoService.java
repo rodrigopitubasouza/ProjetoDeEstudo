@@ -7,9 +7,9 @@ import javax.enterprise.context.SessionScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
+import com.estudo.dao.AlunoDAO;
 import com.estudo.entity.Aluno;
-import com.estudo.model.AlunoDAO;
-import com.estudo.service.exception.AlunoInexistenteException;
+import com.estudo.service.exception.InexistenteException;
 
 
 @Named
@@ -21,12 +21,12 @@ public class AlunoService implements Serializable {
 	@Inject
 	AlunoDAO dao;
 	
-	public Aluno find(Integer id) throws AlunoInexistenteException {
+	public Aluno find(Integer id) throws InexistenteException {
 		Aluno alunoExistente = dao.find(id);
 		if(alunoExistente != null)
 			return alunoExistente;	
 		else
-			throw new AlunoInexistenteException();
+			throw new InexistenteException("Aluno inexistente");
 	}
 
 	public void insert(Aluno aluno)  {
@@ -34,12 +34,12 @@ public class AlunoService implements Serializable {
 		dao.insert(aluno);
 	}
 	
-	public void update(Aluno aluno) throws AlunoInexistenteException {
+	public void update(Aluno aluno) throws InexistenteException {
 		find(aluno.getId());
 		dao.update(aluno);	
 	}
 	
-	public void remove(Integer id) throws AlunoInexistenteException {
+	public void remove(Integer id) throws InexistenteException {
 		dao.delete(find(id));
 	}
 

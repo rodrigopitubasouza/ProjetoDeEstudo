@@ -1,5 +1,6 @@
 package com.estudo.entity;
 
+import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -15,6 +16,8 @@ public class Aluno {
 	private Integer id;
 	private String nome;
 	private String matricula;
+	@Embedded
+	private Endereco endereco;
 	
 	public Aluno() {
 	}
