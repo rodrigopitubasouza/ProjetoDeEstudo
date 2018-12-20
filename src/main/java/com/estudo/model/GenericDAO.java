@@ -4,15 +4,10 @@ import java.io.Serializable;
 import java.util.List;
 
 import javax.enterprise.context.RequestScoped;
-import javax.enterprise.context.SessionScoped;
-import javax.enterprise.inject.Disposes;
-import javax.enterprise.inject.Produces;
+import javax.inject.Inject;
 import javax.inject.Named;
 import javax.interceptor.Interceptors;
 import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
-import javax.persistence.PersistenceContext;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
@@ -28,30 +23,13 @@ public class GenericDAO<T> implements Serializable{
 	 */
 	private static final long serialVersionUID = 1289446525582740316L;
 
-	@PersistenceContext
+	@Inject
 	private EntityManager entityManager;
 	
 	private Class<T> type;
 	
 	public GenericDAO(Class<T> type) {
-		super();
 		this.type = type;
-	}
-
-	@Produces
-	@SessionScoped
-	public EntityManagerFactory criaFactory() {
-		return Persistence.createEntityManagerFactory("javaEEDB");
-	}
-
-	@Produces
-	@RequestScoped
-	public EntityManager criaEntityManager(EntityManagerFactory factory) {
-		return factory.createEntityManager();
-	}
-
-	public void finaliza(@Disposes EntityManager manager) {
-		manager.close();
 	}
 	
 	public T find(Integer id) {

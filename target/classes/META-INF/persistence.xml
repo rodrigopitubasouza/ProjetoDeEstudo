@@ -18,7 +18,7 @@
      <property name="javax.persistence.jdbc.driver" 
              value="com.microsoft.sqlserver.jdbc.SQLServerDriver" />
     <property name="javax.persistence.jdbc.url" 
-            value="jdbc:sqlserver://localhost:1433;databaseName=JavaEEDB" />
+            value="jdbc:sqlserver://localhost:1433;databaseName=javaeedb" />
     <property name="javax.persistence.jdbc.user" 
             value="admin1" />
     <property name="javax.persistence.jdbc.password" 

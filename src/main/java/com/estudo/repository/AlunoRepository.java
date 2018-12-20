@@ -18,7 +18,7 @@ import com.estudo.service.AlunoService;
 import com.estudo.service.exception.AlunoInexistenteException;
 
 @Path("/alunos")
-public class AlunoRepositorty {
+public class AlunoRepository {
 	
 	@Inject
 	private AlunoService alunoService;

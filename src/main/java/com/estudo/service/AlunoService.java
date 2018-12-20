@@ -35,7 +35,8 @@ public class AlunoService implements Serializable {
 	}
 	
 	public void update(Aluno aluno) throws AlunoInexistenteException {
-		dao.update(find(aluno.getId()));	
+		find(aluno.getId());
+		dao.update(aluno);	
 	}
 	
 	public void remove(Integer id) throws AlunoInexistenteException {
